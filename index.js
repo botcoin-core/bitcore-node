@@ -20,7 +20,7 @@ module.exports.scaffold.defaultConfig = require('./lib/scaffold/default-config')
 module.exports.cli = {};
 module.exports.cli.main = require('./lib/cli/main');
 module.exports.cli.daemon = require('./lib/cli/daemon');
-module.exports.cli.bitcore = require('./lib/cli/bitcore');
+module.exports.cli.botcore = require('./lib/cli/botcore');
 module.exports.cli.bitcored = require('./lib/cli/bitcored');
 
-module.exports.lib = require('bitcore-lib');
+module.exports.lib = require('botcore-lib');

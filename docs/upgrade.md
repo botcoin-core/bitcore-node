@@ -2,13 +2,13 @@
 
 ## From Bitcore 3.0.0 to 4.0.0
 
-`bitcore-node@2.1.1` to `bitcore-node@3.0.0`
+`botcore-node@2.1.1` to `botcore-node@3.0.0`
 
 This major upgrade includes changes to indexes, API methods and services. Please review below details before upgrading.
 
 ### Indexes
 
-Indexes include *more information* and are now also *faster*. Because of this a **reindex will be necessary** when upgrading as the address and database indexes are now a part of bitcoind with three new `bitcoin.conf` options:
+Indexes include *more information* and are now also *faster*. Because of this a **reindex will be necessary** when upgrading as the address and database indexes are now a part of bitcoind with three new `botcoin.conf` options:
 - `-addressindex`
 - `-timestampindex`
 - `-spentindex`
@@ -17,13 +17,13 @@ To start reindexing add `reindex=1` during the **first startup only**.
 
 ### Configuration Options
 
-- The `bitcoin.conf` file in will need to be updated to include additional indexes *(see below)*.
-- The `datadir` option is now a part of `bitcoind` spawn configuration, and there is a new option to connect to multiple bitcoind processes (Please see [Bitcoin Service Docs](services/bitcoind.md) for more details). The services `db` and `address` are now a part of the `bitcoind` service. Here is how to update `bitcore-node.json` configuration options:
+- The `botcoin.conf` file in will need to be updated to include additional indexes *(see below)*.
+- The `datadir` option is now a part of `bitcoind` spawn configuration, and there is a new option to connect to multiple bitcoind processes (Please see [Bitcoin Service Docs](services/bitcoind.md) for more details). The services `db` and `address` are now a part of the `bitcoind` service. Here is how to update `botcore-node.json` configuration options:
 
 **Before**:
 ```json
 {
-  "datadir": "/home/<username>/.bitcoin",
+  "datadir": "/home/<username>/.botcoin",
   "network": "livenet",
   "port": 3001,
   "services": [
@@ -47,15 +47,15 @@ To start reindexing add `reindex=1` during the **first startup only**.
   "servicesConfig": {
     "bitcoind": {
       "spawn": {
-        "datadir": "/home/<username>/.bitcoin",
-        "exec": "/home/<username>/bitcore-node/bin/bitcoind"
+        "datadir": "/home/<username>/.botcoin",
+        "exec": "/home/<username>/botcore-node/bin/bitcoind"
       }
     }
   }
 }
 ```
 
-It will also be necessary to update `bitcoin.conf` settings, to include these fields:
+It will also be necessary to update `botcoin.conf` settings, to include these fields:
 ```
 server=1
 whitelist=127.0.0.1
@@ -70,7 +70,7 @@ rpcuser=<user>
 rpcpassword=<password>
 ```
 
-**Important**: Once changes have been made you'll also need to add the `reindex=1` option **only for the first startup** to regenerate the indexes. Once this is complete you should be able to remove the `bitcore-node.db` directory with the old indexes.
+**Important**: Once changes have been made you'll also need to add the `reindex=1` option **only for the first startup** to regenerate the indexes. Once this is complete you should be able to remove the `botcore-node.db` directory with the old indexes.
 
 ### API and Service Changes
 - Many API methods that were a part of the `db` and `address` services are now a part of the `bitcoind` service. Please see [Bitcoin Service Docs](services/bitcoind.md) for more details.

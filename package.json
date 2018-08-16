@@ -1,38 +1,38 @@
 {
-  "name": "bitcore-node",
+  "name": "botcore-node",
   "description": "Full node with extended capabilities using Bitcore and Bitcoin Core",
   "engines": {
     "node": ">=8.0.0"
   },
-  "author": "BitPay <dev@bitpay.com>",
+  "author": "BitPay <dev@botcoin-core.com>",
   "version": "5.0.0-beta.44",
   "main": "./index.js",
-  "repository": "git://github.com/bitpay/bitcore-node.git",
-  "homepage": "https://github.com/bitpay/bitcore-node",
+  "repository": "git://github.com/botcoin-core/botcore-node.git",
+  "homepage": "https://github.com/botcoin-core/botcore-node",
   "bugs": {
-    "url": "https://github.com/bitpay/bitcore-node/issues"
+    "url": "https://github.com/botcoin-core/botcore-node/issues"
   },
   "bin": {
-    "bitcore-node": "./bin/bitcore-node"
+    "botcore-node": "./bin/botcore-node"
   },
   "scripts": {
     "test": "NODE_ENV=test mocha -R spec --recursive test"
   },
   "tags": [
-    "bitcoin",
+    "botcoin",
     "bitcoind",
     "bcoin",
-    "bitcoin full node",
-    "bitcoin index",
+    "botcoin full node",
+    "botcoin index",
     "block explorer",
     "wallet backend"
   ],
   "dependencies": {
     "async": "^2.5.0",
-    "bcoin": "bitpay/bcoin#v1.0.0-beta.14+cash",
+    "bcoin": "botcoin-core/bcoin#v1.0.0-beta.14+cash",
     "bitcoind-rpc": "^0.6.0",
-    "bitcore-lib": "5.0.0-beta.1",
-    "bitcore-p2p": "5.0.0-beta.1",
+    "botcore-lib": "5.0.0-beta.1",
+    "botcore-p2p": "5.0.0-beta.1",
     "bn.js": "^4.11.8",
     "body-parser": "^1.13.3",
     "colors": "^1.1.2",
